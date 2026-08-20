@@ -97,6 +97,30 @@
   window.addEventListener("load", () => setTimeout(() => celebrate(160), 500));
   document.getElementById("celebrateBtn")?.addEventListener("click", () => celebrate(180));
 
+  /* Mobile nav */
+  const navToggle = document.getElementById("navToggle");
+  const siteNav = document.getElementById("siteNav");
+
+  function setNavOpen(open) {
+    if (!navToggle || !siteNav) return;
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    siteNav.classList.toggle("is-open", open);
+    document.body.classList.toggle("nav-open", open);
+  }
+
+  navToggle?.addEventListener("click", () => {
+    setNavOpen(navToggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  siteNav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setNavOpen(false));
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setNavOpen(false);
+  });
+
   /* Category filters */
   const filterBtns = [...document.querySelectorAll(".filter-btn")];
   const allTiles = [...document.querySelectorAll(".gallery .tile")];
@@ -174,4 +198,25 @@
     if (e.key === "ArrowLeft") openAt(index - 1);
     if (e.key === "ArrowRight") openAt(index + 1);
   });
+
+  /* Swipe between photos on touch devices */
+  let touchX = 0;
+  lightbox.addEventListener(
+    "touchstart",
+    (e) => {
+      touchX = e.changedTouches[0].screenX;
+    },
+    { passive: true }
+  );
+  lightbox.addEventListener(
+    "touchend",
+    (e) => {
+      if (lightbox.hidden) return;
+      const dx = e.changedTouches[0].screenX - touchX;
+      if (Math.abs(dx) < 50) return;
+      if (dx > 0) openAt(index - 1);
+      else openAt(index + 1);
+    },
+    { passive: true }
+  );
 })();
