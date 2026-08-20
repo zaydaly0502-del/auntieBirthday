@@ -454,9 +454,9 @@ main {
   gap: 0.55rem 0.75rem;
   font-size: clamp(1.55rem, 3.6vw, 2.05rem) !important;
   line-height: 1.7;
-  color: var(--sea-deep);
   font-weight: 700;
   text-align: center;
+  animation: arabic-text-color 4.5s ease-in-out infinite;
 }
 
 .letter-emoji {
@@ -469,6 +469,27 @@ main {
 
 .letter-emoji:last-child {
   animation-delay: -1.75s;
+}
+
+@keyframes arabic-text-color {
+  0% {
+    color: #d4654a;
+  }
+  20% {
+    color: #c49a5c;
+  }
+  40% {
+    color: #1f7a6e;
+  }
+  60% {
+    color: #7a4f9a;
+  }
+  80% {
+    color: #b14a32;
+  }
+  100% {
+    color: #d4654a;
+  }
 }
 
 @keyframes emoji-color-shift {
@@ -490,8 +511,16 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .letter-arabic-main,
   .letter-emoji {
     animation: none;
+  }
+
+  .letter-arabic-main {
+    color: var(--coral);
+  }
+
+  .letter-emoji {
     filter: none;
   }
 }
