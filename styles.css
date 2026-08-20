@@ -1283,8 +1283,18 @@ main {
 
 /* ——— Responsive: phone + small tablet ——— */
 @media (max-width: 860px) {
+  .topnav {
+    position: absolute;
+  }
+
   .nav-toggle {
     display: inline-flex;
+  }
+
+  body.nav-open .nav-toggle {
+    position: fixed;
+    top: max(0.85rem, env(safe-area-inset-top));
+    right: clamp(1rem, 4vw, 3rem);
   }
 
   .topnav-links {
