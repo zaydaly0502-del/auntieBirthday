@@ -1,0 +1,17 @@
+{
+  "name": "auntie-birth-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "heic-convert": "^2.1.0",
+    "mp4box": "^2.4.1",
+    "sharp": "^0.35.3"
+  }
+}

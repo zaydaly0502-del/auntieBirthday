@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Original / oversized source media (keep only optimized web assets)
+*.heic
+*.HEIC
+20260620_195650.mp4
+new con/
+media/videos/film-01.mp4
+media/videos/film-01-web.mp4
+
+# Loose originals at project root
+/*.jpg
+/*.JPG
+/*.jpeg
+/*.mp4
+
+# Unoptimized duplicates in media root (site uses media/optimized/)
+/media/*.jpg
+/media/*.JPG
+/media/*.jpeg
+/media/*.webp
+/media/manifest.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log

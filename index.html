@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 58th Birthday, Auntie — 21.08.2026</title>
+  <meta name="description" content="A love letter in photos and film for Auntie's 58th birthday." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+  </div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <header class="topnav">
+    <a class="topnav-brand" href="#top">Auntie</a>
+    <nav class="topnav-links">
+      <a href="#letter">Letter</a>
+      <a href="#memories">Memories</a>
+      <a href="#film">Films</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Birthday welcome">
+      <div class="hero-media">
+        <picture>
+          <source srcset="media/optimized/mem-10.webp" type="image/webp" />
+          <img
+            src="media/optimized/mem-10.jpg"
+            alt="Auntie smiling on a boat with birthday balloons"
+            class="hero-img"
+            fetchpriority="high"
+          />
+        </picture>
+        <div class="hero-veil"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-date">21 · 08 · 2026</p>
+        <h1 class="hero-brand">Auntie</h1>
+        <p class="hero-script">Happy 58th Birthday</p>
+        <p class="hero-lead">
+          A whole lifetime of warmth, collected into one golden day — and these frames of us, forever yours.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#memories">See our memories</a>
+          <a class="btn btn-ghost" href="#film">Play the films</a>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#letter" aria-label="Scroll to letter">
+        <span></span>
+      </a>
+    </section>
+
+    <section class="letter" id="letter">
+      <div class="letter-inner">
+        <p class="section-kicker">From the heart</p>
+        <h2 class="section-title">For the woman who makes ordinary days feel like celebrations</h2>
+        <div class="letter-body">
+          <p>
+            Tomorrow you turn <em>fifty-eight</em> — and somehow you still carry the light of someone who makes everyone around her feel chosen.
+          </p>
+          <p>
+            These photos and films are only a small shelf of proof: restaurant tables and boat decks, pink evenings and sunny afternoons, quiet hugs and loud laughs. Every frame says the same thing — we are so lucky you are ours.
+          </p>
+          <p class="letter-arabic" lang="ar" dir="rtl">كل سنة وأنتِ طيبة، يا غالية</p>
+          <p class="letter-sign">With all our love,<br /><span>Your family</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="memories" id="memories">
+      <div class="section-head">
+        <p class="section-kicker">The gallery · 23 photos</p>
+        <h2 class="section-title">Moments that raised us</h2>
+        <p class="section-lead">Sorted with love — tap a category, open any photo.</p>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="Photo categories">
+        <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button type="button" class="filter-btn" data-filter="together" role="tab" aria-selected="false">Together</button>
+        <button type="button" class="filter-btn" data-filter="sea" role="tab" aria-selected="false">Sea day</button>
+        <button type="button" class="filter-btn" data-filter="family" role="tab" aria-selected="false">Family</button>
+        <button type="button" class="filter-btn" data-filter="portrait" role="tab" aria-selected="false">Portrait</button>
+      </div>
+
+      <div class="gallery" id="photoGallery">
+        <!-- Together -->
+        <figure class="tile orient-landscape" data-cat="together" data-caption="A kiss on the cheek, pure love">
+          <picture>
+            <source srcset="media/optimized/mem-02.webp" type="image/webp" />
+            <img src="media/optimized/mem-02.jpg" alt="A loving kiss on Auntie's cheek" loading="lazy" width="1333" height="1000" />
+          </picture>
+        </figure>
+        <figure class="tile orient-landscape" data-cat="together" data-caption="Two smiles, one heartbeat">
+          <picture>
+            <source srcset="media/optimized/mem-03.webp" type="image/webp" />
+            <img src="media/optimized/mem-03.jpg" alt="Auntie and nephew smiling together in the car" loading="lazy" width="1333" height="1000" />
+          </picture>
+        </figure>
+        <figure class="tile orient-landscape" data-cat="together" data-caption="Green days and quiet pride">
+          <picture>
+            <source srcset="media/optimized/mem-04.webp" type="image/webp" />
+            <img src="media/optimized/mem-04.jpg" alt="Auntie kissing her nephew's cheek outdoors" loading="lazy" width="1333" height="1000" />
+          </picture>
+        </figure>
+        <figure class="tile orient-landscape" data-cat="together" data-caption="Table talk and tenderness">
+          <picture>
+            <source srcset="media/optimized/mem-05.webp" type="image/webp" />
+            <img src="media/optimized/mem-05.jpg" alt="Auntie leaning affectionately at a restaurant table" loading="lazy" width="1024" height="768" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="together" data-caption="Smile that fills the frame">
+          <picture>
+            <source srcset="media/optimized/mem-06.webp" type="image/webp" />
+            <img src="media/optimized/mem-06.jpg" alt="Selfie with Auntie in a white hijab" loading="lazy" width="1000" height="1333" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="together" data-caption="A soft afternoon, side by side">
+          <picture>
+            <source srcset="media/optimized/mem-07.webp" type="image/webp" />
+            <img src="media/optimized/mem-07.jpg" alt="Auntie and family outdoors in patterned white" loading="lazy" width="933" height="1400" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="together" data-caption="Pink evening joy">
+          <picture>
+            <source srcset="media/optimized/mem-08.webp" type="image/webp" />
+            <img src="media/optimized/mem-08.jpg" alt="Auntie in a bright pink hijab smiling in the car" loading="lazy" width="788" height="1400" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="together" data-caption="Close, bright, unforgettable">
+          <picture>
+            <source srcset="media/optimized/mem-09.webp" type="image/webp" />
+            <img src="media/optimized/mem-09.jpg" alt="Close-up selfie with Auntie" loading="lazy" width="961" height="1280" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="together" data-caption="Night lights, warm company">
+          <picture>
+            <source srcset="media/optimized/mem-11.webp" type="image/webp" />
+            <img src="media/optimized/mem-11.jpg" alt="Auntie by the waterfront at night" loading="lazy" width="933" height="1400" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="together" data-caption="A hug on the open sea">
+          <picture>
+            <source srcset="media/optimized/new-05.webp" type="image/webp" />
+            <img src="media/optimized/new-05.jpg" alt="Family member kissing Auntie on the cheek on a boat" loading="lazy" width="960" height="1280" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="together" data-caption="Love returned, wave after wave">
+          <picture>
+            <source srcset="media/optimized/new-06.webp" type="image/webp" />
+            <img src="media/optimized/new-06.jpg" alt="Auntie kissing a family member on the cheek on a boat" loading="lazy" width="960" height="1280" />
+          </picture>
+        </figure>
+
+        <!-- Sea day -->
+        <figure class="tile orient-portrait" data-cat="sea" data-caption="Balloons, blue water, birthday spirit">
+          <picture>
+            <source srcset="media/optimized/mem-10.webp" type="image/webp" />
+            <img src="media/optimized/mem-10.jpg" alt="Auntie on a boat holding balloons" loading="lazy" width="960" height="1280" />
+          </picture>
+        </figure>
+        <figure class="tile orient-landscape" data-cat="sea" data-caption="Four hearts, one horizon">
+          <picture>
+            <source srcset="media/optimized/new-01.webp" type="image/webp" />
+            <img src="media/optimized/new-01.jpg" alt="Family group on a boat by turquoise water" loading="lazy" width="1280" height="960" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="sea" data-caption="Blue dock, bright smiles">
+          <picture>
+            <source srcset="media/optimized/new-02.webp" type="image/webp" />
+            <img src="media/optimized/new-02.jpg" alt="Four women on a blue floating dock" loading="lazy" width="960" height="1280" />
+          </picture>
+        </figure>
+        <figure class="tile orient-landscape" data-cat="sea" data-caption="Selfie with balloons">
+          <picture>
+            <source srcset="media/optimized/new-03.webp" type="image/webp" />
+            <img src="media/optimized/new-03.jpg" alt="Boat selfie with family and balloons" loading="lazy" width="1280" height="959" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="sea" data-caption="Standing tall over the sea">
+          <picture>
+            <source srcset="media/optimized/new-04.webp" type="image/webp" />
+            <img src="media/optimized/new-04.jpg" alt="Family standing together on the boat deck" loading="lazy" width="960" height="1280" />
+          </picture>
+        </figure>
+        <figure class="tile orient-landscape" data-cat="sea" data-caption="Lighthouse and laughter">
+          <picture>
+            <source srcset="media/optimized/new-07.webp" type="image/webp" />
+            <img src="media/optimized/new-07.jpg" alt="Family on a boat near a lighthouse with balloons" loading="lazy" width="1280" height="960" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="sea" data-caption="Captain Auntie">
+          <picture>
+            <source srcset="media/optimized/new-11.webp" type="image/webp" />
+            <img src="media/optimized/new-11.jpg" alt="Auntie smiling at the boat helm" loading="lazy" width="1000" height="1333" />
+          </picture>
+        </figure>
+
+        <!-- Family -->
+        <figure class="tile orient-portrait" data-cat="family" data-caption="A fun day out">
+          <picture>
+            <source srcset="media/optimized/new-08.webp" type="image/webp" />
+            <img src="media/optimized/new-08.jpg" alt="Auntie hugging family by a red statue" loading="lazy" width="960" height="1280" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="family" data-caption="Generations in one embrace">
+          <picture>
+            <source srcset="media/optimized/new-09.webp" type="image/webp" />
+            <img src="media/optimized/new-09.jpg" alt="Auntie hugging family with a little girl nearby" loading="lazy" width="960" height="1280" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="family" data-caption="Joy with the little one">
+          <picture>
+            <source srcset="media/optimized/new-10.webp" type="image/webp" />
+            <img src="media/optimized/new-10.jpg" alt="Auntie holding a smiling baby outdoors" loading="lazy" width="960" height="1280" />
+          </picture>
+        </figure>
+        <figure class="tile orient-portrait" data-cat="family" data-caption="A soft kiss for the baby">
+          <picture>
+            <source srcset="media/optimized/new-12.webp" type="image/webp" />
+            <img src="media/optimized/new-12.jpg" alt="Auntie kissing a baby on the cheek" loading="lazy" width="960" height="1280" />
+          </picture>
+        </figure>
+
+        <!-- Portrait -->
+        <figure class="tile orient-portrait" data-cat="portrait" data-caption="A portrait of grace">
+          <picture>
+            <source srcset="media/optimized/mem-01.webp" type="image/webp" />
+            <img src="media/optimized/mem-01.jpg" alt="Portrait of Auntie" loading="lazy" width="1000" height="1333" />
+          </picture>
+        </figure>
+      </div>
+    </section>
+
+    <section class="film" id="film">
+      <div class="film-inner">
+        <div class="section-head section-head-light">
+          <p class="section-kicker">The films · 2 videos</p>
+          <h2 class="section-title">Press play for living memories</h2>
+          <p class="section-lead">Both videos from your folders — sized to fit the page nicely.</p>
+        </div>
+
+        <div class="films-grid">
+          <article class="film-card reveal">
+            <div class="player player-portrait">
+              <video
+                controls
+                playsinline
+                preload="metadata"
+                poster="media/optimized/film-01-poster.jpg"
+                aria-label="Beach buggy memory film"
+              >
+                <source src="media/videos/film-beach-buggy.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <h3 class="film-title">Beach buggy film</h3>
+            <p class="film-note">Converted for the browser so picture + sound both play</p>
+          </article>
+
+          <article class="film-card reveal">
+            <div class="player player-portrait">
+              <video
+                controls
+                playsinline
+                preload="metadata"
+                poster="media/optimized/new-01.webp"
+                aria-label="Sea day memory film"
+              >
+                <source src="media/videos/film-02.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <h3 class="film-title">Sea day film</h3>
+            <p class="film-note">From the new con folder</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale" id="wish">
+      <div class="finale-glow" aria-hidden="true"></div>
+      <p class="finale-years reveal">58</p>
+      <h2 class="finale-title reveal">May this year be softer, brighter, and full of people who love you back</h2>
+      <p class="finale-script reveal">Happy Birthday, Auntie</p>
+      <button type="button" class="btn btn-primary finale-btn" id="celebrateBtn">Celebrate again</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with love for Auntie’s 58th · 21 August 2026</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+    <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous">‹</button>
+    <img alt="" />
+    <button type="button" class="lightbox-nav lightbox-next" aria-label="Next">›</button>
+    <p class="lightbox-caption"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
