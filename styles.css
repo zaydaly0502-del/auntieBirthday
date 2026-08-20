@@ -15,6 +15,7 @@
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-script: "Great Vibes", cursive;
   --font-body: "Outfit", sans-serif;
+  --font-arabic: "Amiri", "Noto Naskh Arabic", "Traditional Arabic", serif;
 }
 
 *,
@@ -435,9 +436,9 @@ main {
 }
 
 .letter-arabic {
-  font-family: var(--font-display);
+  font-family: var(--font-arabic);
   color: var(--sea-deep);
-  margin: 2rem 0 !important;
+  margin: 1.5rem 0 0 !important;
 }
 
 .letter-arabic p {
@@ -446,9 +447,53 @@ main {
 }
 
 .letter-arabic-main {
-  font-size: clamp(1.6rem, 3.8vw, 2.15rem) !important;
-  color: var(--coral);
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.75rem;
+  font-size: clamp(1.55rem, 3.6vw, 2.05rem) !important;
+  line-height: 1.7;
+  color: var(--sea-deep);
+  font-weight: 700;
+  text-align: center;
+}
+
+.letter-emoji {
+  display: inline-block;
+  font-size: 1.15em;
+  line-height: 1;
+  animation: emoji-color-shift 3.5s linear infinite;
+  will-change: filter;
+}
+
+.letter-emoji:last-child {
+  animation-delay: -1.75s;
+}
+
+@keyframes emoji-color-shift {
+  0% {
+    filter: hue-rotate(0deg) saturate(1.35);
+  }
+  25% {
+    filter: hue-rotate(90deg) saturate(1.45);
+  }
+  50% {
+    filter: hue-rotate(180deg) saturate(1.35);
+  }
+  75% {
+    filter: hue-rotate(270deg) saturate(1.45);
+  }
+  100% {
+    filter: hue-rotate(360deg) saturate(1.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letter-emoji {
+    animation: none;
+    filter: none;
+  }
 }
 
 .letter-sign {
