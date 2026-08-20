@@ -920,43 +920,58 @@ main {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 0.85rem;
-  max-width: 980px;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: clamp(1.4rem, 3vw, 2.1rem) clamp(0.9rem, 2vw, 1.35rem);
+  max-width: 1080px;
   margin: 0 auto;
-  perspective: 900px;
+  padding: 0.5rem 0.25rem 1rem;
+  align-items: start;
 }
 
 .tile {
   position: relative;
   margin: 0;
-  overflow: hidden;
-  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem 0.7rem 0;
+  border-radius: 2px;
   cursor: zoom-in;
   isolation: isolate;
-  background: #16352f;
-  box-shadow: 0 10px 28px rgba(13, 61, 55, 0.14);
+  background:
+    linear-gradient(165deg, #fffdf8 0%, #f4ebe0 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 12px 28px rgba(13, 61, 55, 0.14),
+    0 2px 6px rgba(16, 36, 31, 0.08);
   transition:
     opacity 0.45s var(--ease),
     transform 0.45s var(--ease),
     box-shadow 0.45s var(--ease),
     filter 0.45s ease;
+  transform: rotate(var(--tilt, 0deg));
 }
+
+.tile:nth-child(6n + 1) { --tilt: -1.6deg; }
+.tile:nth-child(6n + 2) { --tilt: 1.2deg; }
+.tile:nth-child(6n + 3) { --tilt: -0.7deg; }
+.tile:nth-child(6n + 4) { --tilt: 1.5deg; }
+.tile:nth-child(6n + 5) { --tilt: -1.1deg; }
+.tile:nth-child(6n)     { --tilt: 0.8deg; }
 
 .tile-enter {
   opacity: 0;
-  transform: translateY(28px) scale(0.94) rotateX(8deg);
+  transform: translateY(28px) scale(0.94) rotate(var(--tilt, 0deg));
 }
 
 .tile-enter.is-in {
   opacity: 1;
-  transform: translateY(0) scale(1) rotateX(0);
+  transform: translateY(0) scale(1) rotate(var(--tilt, 0deg));
   transition-delay: calc(var(--i, 0) * 45ms);
 }
 
 .tile.is-hidden {
   opacity: 0 !important;
-  transform: scale(0.88) !important;
+  transform: scale(0.88) rotate(var(--tilt, 0deg)) !important;
   filter: blur(4px);
   pointer-events: none;
   position: absolute;
@@ -968,62 +983,23 @@ main {
   border: 0;
 }
 
-.tile.orient-portrait {
-  aspect-ratio: 3 / 4;
+.tile.orient-portrait,
+.tile.orient-landscape {
+  aspect-ratio: auto;
+  grid-column: auto;
 }
 
-.tile.orient-landscape {
-  aspect-ratio: 4 / 3;
-  grid-column: span 2;
+.tile picture {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #1a3530;
+  box-shadow: inset 0 0 0 1px rgba(16, 36, 31, 0.08);
 }
 
 .tile-frame {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  border-radius: inherit;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
-}
-
-.tile-frame::before,
-.tile-frame::after {
-  content: "";
-  position: absolute;
-  width: 0.85rem;
-  height: 0.85rem;
-  border: 1.5px solid rgba(255, 230, 190, 0.7);
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-.tile-frame::before {
-  top: 0.45rem;
-  left: 0.45rem;
-  border-right: 0;
-  border-bottom: 0;
-}
-
-.tile-frame::after {
-  bottom: 0.45rem;
-  right: 0.45rem;
-  border-left: 0;
-  border-top: 0;
-}
-
-.tile:nth-child(3n) {
-  animation: tileBob 6s ease-in-out infinite;
-  animation-delay: calc(var(--i, 0) * -0.2s);
-}
-
-.tile:nth-child(3n + 1) {
-  animation: tileBob 7.2s ease-in-out infinite reverse;
-  animation-delay: calc(var(--i, 0) * -0.15s);
-}
-
-@keyframes tileBob {
-  0%, 100% { translate: 0 0; }
-  50% { translate: 0 -5px; }
+  display: none;
 }
 
 .tile img {
@@ -1036,46 +1012,41 @@ main {
 
 .tile::after {
   content: attr(data-caption);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  display: block;
+  position: relative;
   z-index: 3;
-  padding: 1.8rem 0.75rem 0.7rem;
+  margin: 0;
+  padding: 0.85rem 0.35rem 1rem;
   font-family: var(--font-display);
-  font-size: 0.95rem;
-  line-height: 1.2;
-  color: #fff;
-  background: linear-gradient(transparent, rgba(8, 28, 25, 0.85));
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.35s ease, transform 0.35s var(--ease);
+  font-size: clamp(0.88rem, 1.8vw, 1.05rem);
+  font-style: italic;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--ink-soft);
+  background: none;
+  opacity: 1;
+  transform: none;
 }
 
 .tile:hover,
 .tile:focus-within {
-  z-index: 2;
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 22px 44px rgba(13, 61, 55, 0.28);
-}
-
-.tile:hover .tile-frame::before,
-.tile:hover .tile-frame::after,
-.tile:focus-within .tile-frame::before,
-.tile:focus-within .tile-frame::after {
-  opacity: 1;
+  z-index: 3;
+  transform: translateY(-8px) scale(1.04) rotate(0deg);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 28px 50px rgba(13, 61, 55, 0.26),
+    0 6px 14px rgba(16, 36, 31, 0.12);
 }
 
 .tile:hover img,
 .tile:focus-within img {
-  transform: scale(1.1);
+  transform: scale(1.08);
   filter: saturate(1.08) contrast(1.03);
 }
 
 .tile:hover::after,
 .tile:focus-within::after {
-  opacity: 1;
-  transform: translateY(0);
+  color: var(--coral-deep);
 }
 
 /* ——— Film ——— */
@@ -1341,10 +1312,6 @@ main {
     max-width: 900px;
   }
 
-  .tile.orient-landscape {
-    grid-column: span 2;
-  }
-
   .films-grid {
     gap: 1.5rem;
   }
@@ -1471,30 +1438,17 @@ main {
 
   .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.65rem;
+    gap: 1.15rem 0.75rem;
+    padding-inline: 0.15rem;
   }
 
-  .tile.orient-landscape {
-    grid-column: span 2;
-    aspect-ratio: 16 / 10;
+  .tile {
+    padding: 0.55rem 0.55rem 0;
   }
 
-  .tile:nth-child(3n),
-  .tile:nth-child(3n + 1) {
-    animation: none;
-  }
-
-  /* Captions visible on touch devices (no hover) */
   .tile::after {
-    opacity: 1;
-    transform: none;
     font-size: 0.82rem;
-    padding: 1.5rem 0.55rem 0.55rem;
-  }
-
-  .tile-frame::before,
-  .tile-frame::after {
-    opacity: 0.65;
+    padding: 0.7rem 0.2rem 0.85rem;
   }
 
   .films-grid {
@@ -1540,7 +1494,7 @@ main {
 
 @media (max-width: 480px) {
   .gallery {
-    gap: 0.5rem;
+    gap: 1rem 0.55rem;
   }
 
   .hero-date {
@@ -1560,7 +1514,7 @@ main {
   }
 
   .tile {
-    border-radius: 0.7rem;
+    --tilt: 0deg !important;
   }
 
   .orb {
@@ -1612,9 +1566,7 @@ main {
   .stage-bloom,
   .stage-spark,
   .stage-polaroid,
-  .stage-img.is-active,
-  .tile:nth-child(3n),
-  .tile:nth-child(3n + 1) {
+  .stage-img.is-active {
     animation: none !important;
   }
   .reveal,
