@@ -86,7 +86,47 @@
       <div class="section-head">
         <p class="section-kicker">The gallery · 23 photos</p>
         <h2 class="section-title">Moments that raised us</h2>
-        <p class="section-lead">Sorted with love — tap a category, open any photo.</p>
+        <p class="section-lead">A living scrapbook — watch the stage, then open any memory.</p>
+      </div>
+
+      <!-- Cinematic photo stage -->
+      <div class="photo-stage reveal" aria-label="Featured memory slideshow">
+        <div class="stage-decor" aria-hidden="true">
+          <span class="stage-ring stage-ring-a"></span>
+          <span class="stage-ring stage-ring-b"></span>
+          <span class="stage-bloom"></span>
+          <span class="stage-spark stage-spark-1"></span>
+          <span class="stage-spark stage-spark-2"></span>
+          <span class="stage-spark stage-spark-3"></span>
+          <span class="stage-spark stage-spark-4"></span>
+        </div>
+
+        <figure class="stage-polaroid stage-polaroid-left" data-stage-side="0">
+          <img src="media/optimized/mem-06.jpg" alt="" loading="lazy" />
+        </figure>
+        <figure class="stage-polaroid stage-polaroid-right" data-stage-side="1">
+          <img src="media/optimized/new-11.jpg" alt="" loading="lazy" />
+        </figure>
+
+        <div class="stage-frame">
+          <div class="stage-corners" aria-hidden="true">
+            <i></i><i></i><i></i><i></i>
+          </div>
+          <div class="stage-viewport">
+            <img class="stage-img is-active" id="stageImgA" src="media/optimized/mem-10.jpg" alt="Featured memory" />
+            <img class="stage-img" id="stageImgB" src="media/optimized/new-01.jpg" alt="" aria-hidden="true" />
+          </div>
+          <div class="stage-caption-wrap">
+            <p class="stage-kicker">Now showing</p>
+            <p class="stage-caption" id="stageCaption">Balloons, blue water, birthday spirit</p>
+          </div>
+        </div>
+
+        <div class="stage-controls">
+          <button type="button" class="stage-btn" id="stagePrev" aria-label="Previous featured photo">‹</button>
+          <div class="stage-dots" id="stageDots" role="tablist" aria-label="Featured photos"></div>
+          <button type="button" class="stage-btn" id="stageNext" aria-label="Next featured photo">›</button>
+        </div>
       </div>
 
       <div class="filters" role="tablist" aria-label="Photo categories">
@@ -99,67 +139,78 @@
 
       <div class="gallery" id="photoGallery">
         <!-- Together -->
-        <figure class="tile orient-landscape" data-cat="together" data-caption="A kiss on the cheek, pure love">
+        <figure class="tile orient-landscape tile-enter" data-cat="together" data-caption="A kiss on the cheek, pure love" style="--i:0">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/mem-02.webp" type="image/webp" />
             <img src="media/optimized/mem-02.jpg" alt="A loving kiss on Auntie's cheek" loading="lazy" width="1333" height="1000" />
           </picture>
         </figure>
-        <figure class="tile orient-landscape" data-cat="together" data-caption="Two smiles, one heartbeat">
+        <figure class="tile orient-landscape tile-enter" data-cat="together" data-caption="Two smiles, one heartbeat" style="--i:1">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/mem-03.webp" type="image/webp" />
             <img src="media/optimized/mem-03.jpg" alt="Auntie and nephew smiling together in the car" loading="lazy" width="1333" height="1000" />
           </picture>
         </figure>
-        <figure class="tile orient-landscape" data-cat="together" data-caption="Green days and quiet pride">
+        <figure class="tile orient-landscape tile-enter" data-cat="together" data-caption="Green days and quiet pride" style="--i:2">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/mem-04.webp" type="image/webp" />
             <img src="media/optimized/mem-04.jpg" alt="Auntie kissing her nephew's cheek outdoors" loading="lazy" width="1333" height="1000" />
           </picture>
         </figure>
-        <figure class="tile orient-landscape" data-cat="together" data-caption="Table talk and tenderness">
+        <figure class="tile orient-landscape tile-enter" data-cat="together" data-caption="Table talk and tenderness" style="--i:3">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/mem-05.webp" type="image/webp" />
             <img src="media/optimized/mem-05.jpg" alt="Auntie leaning affectionately at a restaurant table" loading="lazy" width="1024" height="768" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="together" data-caption="Smile that fills the frame">
+        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="Smile that fills the frame" style="--i:4">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/mem-06.webp" type="image/webp" />
             <img src="media/optimized/mem-06.jpg" alt="Selfie with Auntie in a white hijab" loading="lazy" width="1000" height="1333" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="together" data-caption="A soft afternoon, side by side">
+        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="A soft afternoon, side by side" style="--i:5">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/mem-07.webp" type="image/webp" />
             <img src="media/optimized/mem-07.jpg" alt="Auntie and family outdoors in patterned white" loading="lazy" width="933" height="1400" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="together" data-caption="Pink evening joy">
+        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="Pink evening joy" style="--i:6">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/mem-08.webp" type="image/webp" />
             <img src="media/optimized/mem-08.jpg" alt="Auntie in a bright pink hijab smiling in the car" loading="lazy" width="788" height="1400" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="together" data-caption="Close, bright, unforgettable">
+        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="Close, bright, unforgettable" style="--i:7">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/mem-09.webp" type="image/webp" />
             <img src="media/optimized/mem-09.jpg" alt="Close-up selfie with Auntie" loading="lazy" width="961" height="1280" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="together" data-caption="Night lights, warm company">
+        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="Night lights, warm company" style="--i:8">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/mem-11.webp" type="image/webp" />
             <img src="media/optimized/mem-11.jpg" alt="Auntie by the waterfront at night" loading="lazy" width="933" height="1400" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="together" data-caption="A hug on the open sea">
+        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="A hug on the open sea" style="--i:9">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/new-05.webp" type="image/webp" />
             <img src="media/optimized/new-05.jpg" alt="Family member kissing Auntie on the cheek on a boat" loading="lazy" width="960" height="1280" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="together" data-caption="Love returned, wave after wave">
+        <figure class="tile orient-portrait tile-enter" data-cat="together" data-caption="Love returned, wave after wave" style="--i:10">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/new-06.webp" type="image/webp" />
             <img src="media/optimized/new-06.jpg" alt="Auntie kissing a family member on the cheek on a boat" loading="lazy" width="960" height="1280" />
@@ -167,43 +218,50 @@
         </figure>
 
         <!-- Sea day -->
-        <figure class="tile orient-portrait" data-cat="sea" data-caption="Balloons, blue water, birthday spirit">
+        <figure class="tile orient-portrait tile-enter" data-cat="sea" data-caption="Balloons, blue water, birthday spirit" style="--i:11">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/mem-10.webp" type="image/webp" />
             <img src="media/optimized/mem-10.jpg" alt="Auntie on a boat holding balloons" loading="lazy" width="960" height="1280" />
           </picture>
         </figure>
-        <figure class="tile orient-landscape" data-cat="sea" data-caption="Four hearts, one horizon">
+        <figure class="tile orient-landscape tile-enter" data-cat="sea" data-caption="Four hearts, one horizon" style="--i:12">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/new-01.webp" type="image/webp" />
             <img src="media/optimized/new-01.jpg" alt="Family group on a boat by turquoise water" loading="lazy" width="1280" height="960" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="sea" data-caption="Blue dock, bright smiles">
+        <figure class="tile orient-portrait tile-enter" data-cat="sea" data-caption="Blue dock, bright smiles" style="--i:13">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/new-02.webp" type="image/webp" />
             <img src="media/optimized/new-02.jpg" alt="Four women on a blue floating dock" loading="lazy" width="960" height="1280" />
           </picture>
         </figure>
-        <figure class="tile orient-landscape" data-cat="sea" data-caption="Selfie with balloons">
+        <figure class="tile orient-landscape tile-enter" data-cat="sea" data-caption="Selfie with balloons" style="--i:14">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/new-03.webp" type="image/webp" />
             <img src="media/optimized/new-03.jpg" alt="Boat selfie with family and balloons" loading="lazy" width="1280" height="959" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="sea" data-caption="Standing tall over the sea">
+        <figure class="tile orient-portrait tile-enter" data-cat="sea" data-caption="Standing tall over the sea" style="--i:15">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/new-04.webp" type="image/webp" />
             <img src="media/optimized/new-04.jpg" alt="Family standing together on the boat deck" loading="lazy" width="960" height="1280" />
           </picture>
         </figure>
-        <figure class="tile orient-landscape" data-cat="sea" data-caption="Lighthouse and laughter">
+        <figure class="tile orient-landscape tile-enter" data-cat="sea" data-caption="Lighthouse and laughter" style="--i:16">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/new-07.webp" type="image/webp" />
             <img src="media/optimized/new-07.jpg" alt="Family on a boat near a lighthouse with balloons" loading="lazy" width="1280" height="960" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="sea" data-caption="Captain Auntie">
+        <figure class="tile orient-portrait tile-enter" data-cat="sea" data-caption="Captain Auntie" style="--i:17">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/new-11.webp" type="image/webp" />
             <img src="media/optimized/new-11.jpg" alt="Auntie smiling at the boat helm" loading="lazy" width="1000" height="1333" />
@@ -211,25 +269,29 @@
         </figure>
 
         <!-- Family -->
-        <figure class="tile orient-portrait" data-cat="family" data-caption="A fun day out">
+        <figure class="tile orient-portrait tile-enter" data-cat="family" data-caption="A fun day out" style="--i:18">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/new-08.webp" type="image/webp" />
             <img src="media/optimized/new-08.jpg" alt="Auntie hugging family by a red statue" loading="lazy" width="960" height="1280" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="family" data-caption="Generations in one embrace">
+        <figure class="tile orient-portrait tile-enter" data-cat="family" data-caption="Generations in one embrace" style="--i:19">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/new-09.webp" type="image/webp" />
             <img src="media/optimized/new-09.jpg" alt="Auntie hugging family with a little girl nearby" loading="lazy" width="960" height="1280" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="family" data-caption="Joy with the little one">
+        <figure class="tile orient-portrait tile-enter" data-cat="family" data-caption="Joy with the little one" style="--i:20">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/new-10.webp" type="image/webp" />
             <img src="media/optimized/new-10.jpg" alt="Auntie holding a smiling baby outdoors" loading="lazy" width="960" height="1280" />
           </picture>
         </figure>
-        <figure class="tile orient-portrait" data-cat="family" data-caption="A soft kiss for the baby">
+        <figure class="tile orient-portrait tile-enter" data-cat="family" data-caption="A soft kiss for the baby" style="--i:21">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/new-12.webp" type="image/webp" />
             <img src="media/optimized/new-12.jpg" alt="Auntie kissing a baby on the cheek" loading="lazy" width="960" height="1280" />
@@ -237,7 +299,8 @@
         </figure>
 
         <!-- Portrait -->
-        <figure class="tile orient-portrait" data-cat="portrait" data-caption="A portrait of grace">
+        <figure class="tile orient-portrait tile-enter" data-cat="portrait" data-caption="A portrait of grace" style="--i:22">
+          <span class="tile-frame" aria-hidden="true"></span>
           <picture>
             <source srcset="media/optimized/mem-01.webp" type="image/webp" />
             <img src="media/optimized/mem-01.jpg" alt="Portrait of Auntie" loading="lazy" width="1000" height="1333" />
@@ -306,7 +369,9 @@
   <div class="lightbox" id="lightbox" hidden>
     <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
     <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous">‹</button>
-    <img alt="" />
+    <div class="lightbox-stage">
+      <img alt="" />
+    </div>
     <button type="button" class="lightbox-nav lightbox-next" aria-label="Next">›</button>
     <p class="lightbox-caption"></p>
   </div>
